@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>     
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <LangVersion>9.0</LangVersion>
+	<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+  <PropertyGroup>    
+    <OutputType>Library</OutputType>
+    <RootNamespace>Decisions.ForEx</RootNamespace>
+    <AssemblyName>$(RootNamespace)</AssemblyName>
+    <RootPath>../</RootPath>  
+    <BuildDest>$(RootPath)obj</BuildDest>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="DecisionsSDK" Version="7.2.4" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.8.1" />
+  </ItemGroup>
+</Project>

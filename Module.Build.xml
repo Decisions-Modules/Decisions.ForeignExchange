@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<CreateModuleInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Resources NoComponents="true">
+    <CoreServicesDlls>
+      <string>.\Decisions.ForEx\obj\Debug\net5.0\win-x64\Decisions.ForEx.dll</string>
+    </CoreServicesDlls>
+    <CliDlls/>
+    <WebPages/>
+	<SilverlightDlls/>
+    <AgentDlls/>
+    <InstallScript/>
+    <SqlScripts/>
+    <ObjectsToImport/>
+    <MsSqlScript/>
+  </Resources>
+  <Version/>
+  <ImagePath>./image.png</ImagePath>
+  <Description>This module has flow steps for getting real time exchange rates between currencies.  Using this module requires an account at: CurrencyLayer.com</Description>
+</CreateModuleInfo>
