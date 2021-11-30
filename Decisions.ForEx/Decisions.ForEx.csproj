@@ -1,24 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>     
-    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
-    <LangVersion>9.0</LangVersion>
-	<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)'=='Release'">
-    <DebugSymbols>false</DebugSymbols>
-    <DebugType>None</DebugType>
-  </PropertyGroup>
-  <PropertyGroup>    
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A7FB8FB3-C29D-4396-93D9-A1BD7991EA21}</ProjectGuid>
     <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Decisions.ForEx</RootNamespace>
-    <AssemblyName>$(RootNamespace)</AssemblyName>
-    <RootPath>../</RootPath>  
-    <BuildDest>$(RootPath)obj</BuildDest>
+    <AssemblyName>Decisions.ForEx</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DecisionsSDK" Version="7.2.4" />
-    <PackageReference Include="System.ServiceModel.Http" Version="4.8.1" />
+    <Reference Include="DecisionsFramework, Version=6.16.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\DecisionsSDK.6.16.0\lib\DecisionsFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ForExSteps.cs" />
+    <Compile Include="ForeignExchangeSettings.cs" />
+    <Compile Include="ForeignExchangeInitializer.cs" />
+    <Compile Include="Service References\StrikeIronForEx\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.CurrencyRateForAmountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.GetAllLatestRatesToUSDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.GetAllLatestUSDToCurrenciesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.GetHistoricalRateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.GetHistoricalRatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.GetLatestRateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.GetLatestRatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.GetRemainingHitsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.GetServiceInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.GetStatusCodesForMethodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.GetStatusCodesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.GetSupportedCurrenciesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.SISubscriptionInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.SIWsOutputOfExchangeRate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.SIWsOutputOfMethodStatusRecord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.SIWsOutputOfSIWsResultArrayOfCurrencyListing.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.SIWsOutputOfSIWsResultArrayOfExchangeRateListing.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.SIWsOutputOfSIWsResultArrayOfMethodStatusRecord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\Decisions.ForEx.StrikeIronForEx.SIWsOutputOfSIWsResultArrayOfServiceInfoRecord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StrikeIronForEx\ForeignExchangeRate3.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\StrikeIronForEx\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StrikeIronForEx\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StrikeIronForEx\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StrikeIronForEx\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

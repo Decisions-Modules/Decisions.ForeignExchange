@@ -12,6 +12,7 @@ using DecisionsFramework.Design.Flow;
 using DecisionsFramework.ServiceLayer;
 using Microsoft.SqlServer.Server;
 using System.ServiceModel;
+using Decisions.ForEx.StrikeIronForEx;
 using DecisionsFramework;
 using DecisionsFramework.Utilities.Data;
 

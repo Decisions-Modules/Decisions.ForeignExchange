@@ -1,19 +1,36 @@
 <?xml version="1.0"?>
 <CreateModuleInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Clients>
+    <DotNetCoreDll>.\packages\DecisionsSDK.6.8.0\lib\CoreServicesClients.Net.dll</DotNetCoreDll>
+    <DotNetFrontendFrameworkDll>.\packages\DecisionsSDK.6.8.0\lib\DecisionsFramework.Net.dll</DotNetFrontendFrameworkDll>
+    <SLCoreDll></SLCoreDll>
+    <SLFrontendFrameworkDll></SLFrontendFrameworkDll>
+    <SilverLightsSDKAssembliesPath></SilverLightsSDKAssembliesPath>
+    <References/>
+  </Clients>
   <Resources NoComponents="true">
-    <CoreServicesDlls>
-      <string>.\Decisions.ForEx\obj\Debug\net5.0\win-x64\Decisions.ForEx.dll</string>
-    </CoreServicesDlls>
+    <ServicesDlls>
+      <string>.\Decisions.ForEx\bin\Debug\Decisions.ForEx.dll</string>
+    </ServicesDlls>
     <CliDlls/>
     <WebPages/>
-	<SilverlightDlls/>
-    <AgentDlls/>
-    <InstallScript/>
-    <SqlScripts/>
-    <ObjectsToImport/>
-    <MsSqlScript/>
+	<MvcViews>
+	</MvcViews>
+	<MvcDlls>
+	</MvcDlls>
+    <AgentDlls>
+    </AgentDlls>
+    <InstallScript>
+    </InstallScript>
+    <SqlScripts />
+    <ObjectsToImport></ObjectsToImport>
+    <MsSqlScript>
+    </MsSqlScript>
+    <MySqlScript>
+    </MySqlScript>
+    <OracleScript>
+    </OracleScript>
   </Resources>
-  <Version/>
   <ImagePath>./image.png</ImagePath>
   <Description>This module has flow steps for getting real time exchange rates between currencies.  Using this module requires an account at: CurrencyLayer.com</Description>
 </CreateModuleInfo>
