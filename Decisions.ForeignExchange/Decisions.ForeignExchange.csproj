@@ -12,7 +12,7 @@
   </PropertyGroup>
   <PropertyGroup>    
     <OutputType>Library</OutputType>
-    <RootNamespace>Decisions.ForEx</RootNamespace>
+    <RootNamespace>Decisions.ForeignExchange</RootNamespace>
     <AssemblyName>$(RootNamespace)</AssemblyName>
     <RootPath>../</RootPath>  
     <BuildDest>$(RootPath)obj</BuildDest>
