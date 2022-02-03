@@ -13,7 +13,7 @@
     <ObjectsToImport/>
     <MsSqlScript/>
   </Resources>
-  <Version>7.10</Version>
+  <Version>8.0.0</Version>
   <ImagePath>./image.png</ImagePath>
   <Description>This module has flow steps for getting real time exchange rates between currencies.  Using this module requires an account at: CurrencyLayer.com</Description>
 </CreateModuleInfo>
