@@ -1,0 +1,19 @@
+{
+    "Resources": {
+		"NoComponents": true,
+		"CoreServicesDlls": [
+			"./Decisions.ForeignExchange/obj/Decisions.ForeignExchange.dll"
+		],
+		"CliDlls": null,
+		"WebPages": null,
+		"SilverlightDlls": null,
+		"AgentDlls": null,
+		"InstallScript": null,
+		"SqlScripts": null,
+		"ObjectsToImport": null,
+		"MsSqlScript": null
+    },
+    "Version": "8.15.0",
+    "ImagePath": "./image.png",
+    "Description": "This module has flow steps for getting real time exchange rates between currencies.  Using this module requires an account at: CurrencyLayer.com"
+}
