@@ -80,23 +80,6 @@ namespace Decisions.ForEx
             set { }
         }
         #endregion
-        
-        public override BaseActionType[] GetActions(AbstractUserContext userContext, EntityActionType[] types)
-        {
-            Account userAccount = userContext.GetAccount();
-
-            FolderPermission permission = FolderService.Instance.GetAccountEffectivePermission(
-                new SystemUserContext(), this.EntityFolderID, userAccount.AccountID);
-
-            bool canAdministrate = FolderPermission.CanAdministrate == (FolderPermission.CanAdministrate & permission) ||
-                                    userAccount.GetUserRights<PortalAdministratorModuleRight>() != null ||
-                                    userAccount.IsAdministrator();
-
-            if (canAdministrate)
-                return new BaseActionType[] { new EditEntityAction(typeof(ForeignExchangeSettings), "Edit", "") { IsDefaultGridAction = true } };
-    
-            return new BaseActionType[0];
-        }
 
         public void Initialize()
         {
